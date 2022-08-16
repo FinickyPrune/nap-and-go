@@ -11,22 +11,22 @@ import MapKit
 struct ContentView: View {
     
     @StateObject private var viewModel = ContentViewModel()
-
+    private var backgroundColor = Color(.sRGB, red: 31/255, green: 115/255, blue: 64/255, opacity: 1.0)
+    
     var body: some View {
             VStack {
                 Text("So where we gonna go?")
                     .bold()
-                    .font(.system(size: 32, weight: .heavy, design: .rounded))
+                    .font(.system(size: 30, weight: .heavy, design: .rounded))
                     
                     .frame(width: nil, height: 80, alignment: .center)
-                    .background(.green)
-                Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
-                    .ignoresSafeArea()
-                    .tint(Color.blue)
+                MapView(region: $viewModel.region)
+                    .cornerRadius(10.0)
                     .onAppear {
                         viewModel.checkIfLocationServicesIsEnabled()
                     }
             }
+            .background(backgroundColor)
         }
 }
 
@@ -35,49 +35,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .preferredColorScheme(.dark)
     }
-}
-
-final class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
-    
-    @Published var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(
-            latitude: 54.85,
-            longitude: 83.11),
-        span: MKCoordinateSpan(
-            latitudeDelta: 0.03,
-            longitudeDelta: 0.03)
-    )
-    
-    var locationManager: CLLocationManager?
-    
-    func checkIfLocationServicesIsEnabled() {
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager = CLLocationManager()
-            locationManager?.delegate = self
-        }
-    }
-    
-    private func checkLocationAuthorization() {
-        guard let locationManager = locationManager else {
-            return
-        }
-        switch locationManager.authorizationStatus {
-            
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-        case .restricted:
-            print("")
-        case .denied:
-            print("")
-        case .authorizedAlways, .authorizedWhenInUse:
-            region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
-        @unknown default:
-            break
-        }
-    }
-    
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        checkLocationAuthorization()
-    }
-    
 }

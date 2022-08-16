@@ -21,6 +21,8 @@
 		AF3AF42528A37C8E00D2F45D /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3AF42428A37C8E00D2F45D /* ComplicationController.swift */; };
 		AF3AF42728A37C8F00D2F45D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF3AF42628A37C8F00D2F45D /* Assets.xcassets */; };
 		AF3AF42A28A37C8F00D2F45D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF3AF42928A37C8F00D2F45D /* Preview Assets.xcassets */; };
+		AF7C6C8C28AB7B160028BC71 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7C6C8B28AB7B160028BC71 /* MapView.swift */; };
+		AF7C6C8E28AB87910028BC71 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7C6C8D28AB87910028BC71 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +85,8 @@
 		AF3AF42928A37C8F00D2F45D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF3AF42B28A37C8F00D2F45D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF3AF42C28A37C8F00D2F45D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		AFA0650B28A63FED00241B8C /* Nap-Go-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Nap-Go-Info.plist"; sourceTree = SOURCE_ROOT; };
+		AF7C6C8B28AB7B160028BC71 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		AF7C6C8D28AB87910028BC71 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +130,12 @@
 		AF3AF40028A37C8B00D2F45D /* Nap&Go */ = {
 			isa = PBXGroup;
 			children = (
-				AFA0650B28A63FED00241B8C /* Nap-Go-Info.plist */,
 				AF3AF40128A37C8B00D2F45D /* Nap_GoApp.swift */,
 				AF3AF40328A37C8B00D2F45D /* ContentView.swift */,
 				AF3AF40528A37C8D00D2F45D /* Assets.xcassets */,
 				AF3AF40728A37C8D00D2F45D /* Preview Content */,
+				AF7C6C8B28AB7B160028BC71 /* MapView.swift */,
+				AF7C6C8D28AB87910028BC71 /* ContentViewModel.swift */,
 			);
 			path = "Nap&Go";
 			sourceTree = "<group>";
@@ -307,7 +311,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF7C6C8E28AB87910028BC71 /* ContentViewModel.swift in Sources */,
 				AF3AF40428A37C8B00D2F45D /* ContentView.swift in Sources */,
+				AF7C6C8C28AB7B160028BC71 /* MapView.swift in Sources */,
 				AF3AF40228A37C8B00D2F45D /* Nap_GoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,7 +588,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Nap-Go-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs your location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -616,7 +622,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Nap-Go-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs your location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
